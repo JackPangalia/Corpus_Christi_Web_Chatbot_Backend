@@ -25,8 +25,6 @@ const corsOptions = {
   origin: [
     'http://127.0.0.1:5500',
     'http://localhost:5173',
-    'https://jackpangalia.github.io/Corpus_Christi_Web_Chatbot_Frontend/',
-    'https://jackpangalia.github.io/Corpus_Christi_Web_Chatbot_Frontend'
   ],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
@@ -46,6 +44,8 @@ const io = new Server(server, {
  * Applies CORS middleware to the Express application.
  */
 app.use(cors(corsOptions));
+app.use(express.json());
+
 
 /**
  * Initializes the OpenAI client using the API key from environment variables.
